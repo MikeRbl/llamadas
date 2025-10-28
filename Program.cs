@@ -7,13 +7,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<ISaludoService, SaludoService>();
+//builder.Services.AddTransient<ISaludoService, SaludoService>();
 //builder.Services.AddSingleton<IContadorService, ContadorService>();
 
 builder.Services.AddScoped<IContadorService, ContadorService>();
 //builder.Services.AddSingleton<IContadorService, ContadorService>();
-builder.Services.AddKeyedTransient<ISaludoService, SaludoFormal>("formal");
-builder.Services.AddKeyedTransient<ISaludoService, SaludoInformal>("informal");
+//builder.Services.AddKeyedTransient<ISaludoService, SaludoFormal>("formal");
+//builder.Services.AddKeyedTransient<ISaludoService, SaludoInformal>("informal");
 builder.Services.AddTransient<ILlamada, Llamadas>();
 
 var app = builder.Build();

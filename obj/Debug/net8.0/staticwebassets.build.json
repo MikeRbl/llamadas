@@ -1,1 +1,11 @@
-{"Version":1,"Hash":"aDrwyvEV8WZUOzYpDV7bmZecRkNHgcd9B7CZCYqj0l8=","Source":"MiProyecto8","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
+{
+  "Version": 1,
+  "Hash": "Ud4e7XYh6EatjhEZQtgRF6PaE91Dv7WCplxbhIjC7eM=",
+  "Source": "MiProyecto8",
+  "BasePath": "_content/MiProyecto8",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

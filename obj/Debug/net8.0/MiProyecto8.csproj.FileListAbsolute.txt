@@ -34,6 +34,18 @@ C:\Users\Victus\Documents\Propietarios\MiProyecto8\obj\Debug\net8.0\refint\MiPro
 C:\Users\Victus\Documents\Propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.pdb
 C:\Users\Victus\Documents\Propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.genruntimeconfig.cache
 C:\Users\Victus\Documents\Propietarios\MiProyecto8\obj\Debug\net8.0\ref\MiProyecto8.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\appsettings.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\MiProyecto8.exe
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\MiProyecto8.deps.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\MiProyecto8.runtimeconfig.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\MiProyecto8.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\MiProyecto8.pdb
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.csproj.AssemblyReference.cache
 C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.AssemblyInfoInputs.cache
@@ -42,3 +54,17 @@ C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj
 C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.sourcelink.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\staticwebassets\msbuild.MiProyecto8.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\staticwebassets\msbuild.build.MiProyecto8.props
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MiProyecto8.props
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MiProyecto8.props
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\scopedcss\bundle\MiProyecto8.styles.css
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyec.698B97AB.Up2Date
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\refint\MiProyecto8.dll
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.pdb
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\MiProyecto8.genruntimeconfig.cache
+C:\Users\roble\Documents\ITSES\10mo cuatri\sistemas propietarios\MiProyecto8\obj\Debug\net8.0\ref\MiProyecto8.dll

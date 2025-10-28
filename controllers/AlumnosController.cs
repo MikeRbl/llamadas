@@ -14,11 +14,26 @@ namespace MiProyecto8.Controllers
     [ApiController]
     public class AlumnosController : ControllerBase
     {
-        private static List<Alumno> alumnos = new List<Alumno>
+        private static List<Alumno> alumnos = new() { "Pedro", "Juan", "Maria" };
+        [HttpGet]
+        public IActionResult GetAlumno()
         {
-            // La lista ahora se inicializa sin IDs
-            new Alumno { Nombre = "Juan", Edad = 20 }
-        };
+            var alumno = new AlumnoM
+            {
+                Id = 1,
+                Nombre = "Juan",
+                Correo = "juan@mail.com",
+                password = "secret123"
+            };
+            var dto = new AlumnoDTO(alumno)
+            {
+                Nombre = alumno.Nombre,
+                Correo = alumno.Correo
+            };
+            return Ok(dto);
+        }
+
+        [HttpGet ("jose")]
 
         // GET: api/alumnos
         [HttpGet]
@@ -81,4 +96,3 @@ namespace MiProyecto8.Controllers
         }
     }
 }
-
