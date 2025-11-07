@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using MiProyecto8;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +18,14 @@ builder.Services.AddScoped<IContadorService, ContadorService>();
 //builder.Services.AddKeyedTransient<ISaludoService, SaludoFormal>("formal");
 //builder.Services.AddKeyedTransient<ISaludoService, SaludoInformal>("informal");
 builder.Services.AddTransient<ILlamada, Llamadas>();
+builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("jsonplaceholder", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["ExternalApis:BaseUrl"]);
+});
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSQL")));
+
 
 var app = builder.Build();
 

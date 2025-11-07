@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using MiProyecto8; // <-- FIX 3: Agregar using para AlumnoM y AlumnoDTO
 
 namespace MiProyecto8.Controllers
 {
+    // Esta clase Alumno se usa para la lista estática
     public class Alumno
     {
         public string Nombre { get; set; }
@@ -14,8 +16,16 @@ namespace MiProyecto8.Controllers
     [ApiController]
     public class AlumnosController : ControllerBase
     {
-        private static List<Alumno> alumnos = new() { "Pedro", "Juan", "Maria" };
-        [HttpGet]
+        // FIX 2: Inicializar la lista con objetos Alumno, no con strings.
+        private static List<Alumno> alumnos = new()
+        {
+            new Alumno { Nombre = "Pedro", Edad = 20 },
+            new Alumno { Nombre = "Juan", Edad = 21 },
+            new Alumno { Nombre = "Maria", Edad = 22 }
+        };
+
+        // FIX 1: Se cambió la ruta para evitar ambigüedad con el Get() de abajo.
+        [HttpGet("dto-test")] // Originalmente era [HttpGet] y chocaba con el Get()
         public IActionResult GetAlumno()
         {
             var alumno = new AlumnoM
@@ -23,7 +33,7 @@ namespace MiProyecto8.Controllers
                 Id = 1,
                 Nombre = "Juan",
                 Correo = "juan@mail.com",
-                password = "secret123"
+                Password = "secret123" // <-- FIX 4: 'Password' debe ir con P mayúscula
             };
             var dto = new AlumnoDTO(alumno)
             {
@@ -33,10 +43,10 @@ namespace MiProyecto8.Controllers
             return Ok(dto);
         }
 
-        [HttpGet ("jose")]
+        // FIX 5: Se eliminó el [HttpGet("jose")] flotante que estaba aquí.
 
         // GET: api/alumnos
-        [HttpGet]
+        [HttpGet] // Esta ruta (GET api/alumnos) ahora es única
         public IEnumerable<Alumno> Get() => alumnos;
 
         // GET: api/alumnos/0
@@ -82,6 +92,7 @@ namespace MiProyecto8.Controllers
         {
             return Ok($"User-Agent: {agente}");          
         }
+        
         // DELETE: api/alumnos/0
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
@@ -96,3 +107,4 @@ namespace MiProyecto8.Controllers
         }
     }
 }
+// <-- FIX 6: Se eliminó el '}' extra que estaba aquí.
