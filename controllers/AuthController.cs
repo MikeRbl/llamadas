@@ -13,37 +13,48 @@ namespace MyApp.Namespace
     public class AuthController : ControllerBase
     {
         private readonly IConfiguration _configuration;
+        private readonly AppDbContext _context; // Inyectamos el contexto de base de datos
 
-        public AuthController(IConfiguration configuration)
+        // Constructor: Recibimos configuración y el contexto de la BD
+        public AuthController(IConfiguration configuration, AppDbContext context)
         {
             _configuration = configuration;
+            _context = context;
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
-            // Lógica de validación de credenciales
-            // **REEMPLAZA ESTA LÓGICA POR LA TUYA** (p. ej., consultar la base de datos)
-            if (loginRequest.Username != "usuario" || loginRequest.Password != "password")
+            // 1. Buscar al ALUMNO por su Correo y Password en la base de datos
+            var alumno = await _context.Alumnos
+                                .FirstOrDefaultAsync(a => a.Correo == loginRequest.Correo 
+                                                       && a.Password == loginRequest.Password);
+
+            // 2. Validar si el alumno existe
+            if (alumno == null)
             {
-                return Unauthorized(new { message = "Credenciales inválidas" });
+                return Unauthorized(new { message = "Correo o contraseña incorrectos" });
             }
 
-            // Generación del Token JWT
+            // 3. Generar los Claims (Datos dentro del token)
+            // Aquí guardamos información útil del alumno dentro del token para no tener que consultar la BD a cada rato
             var authClaims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, loginRequest.Username),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                // Puedes agregar más claims, como roles o ID de usuario
-                new Claim(ClaimTypes.Role, "Admin")
+                new Claim(ClaimTypes.Name, alumno.Correo),          // Guardamos el correo como identificador
+                new Claim("Nombre", alumno.Nombre),                 // Guardamos el nombre real (claim personalizado)
+                new Claim("IdAlumno", alumno.Id.ToString()), // Muy útil: Guardamos el ID del alumno para usarlo luego
+                new Claim(ClaimTypes.Role, "Alumno"),               // Asignamos el rol "Alumno"
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
+            // 4. Firmar y crear el Token
             var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Issuer = _configuration["Jwt:Issuer"],
                 Audience = _configuration["Jwt:Audience"],
-                Expires = DateTime.UtcNow.AddHours(3), // El token expira en 3 horas
+                Expires = DateTime.UtcNow.AddHours(4), // Duración del token
                 SigningCredentials = new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256),
                 Subject = new ClaimsIdentity(authClaims)
             };
@@ -54,7 +65,8 @@ namespace MyApp.Namespace
             return Ok(new
             {
                 token = tokenHandler.WriteToken(token),
-                expiration = token.ValidTo
+                expiration = token.ValidTo,
+                alumno = alumno.Nombre // Opcional: devolver el nombre para mostrarlo en el frontend
             });
         }
     }
