@@ -24,7 +24,7 @@ namespace MiProyecto8.controllers
 
             var convocatoriaExiste = await _context.Convocatorias
                                         .AnyAsync(c => c.ConvocatoriaId == participante.IdConvocatoria);
-            
+
             if (!convocatoriaExiste)
             {
                 return BadRequest(new { mensaje = $"La convocatoria con ID {participante.IdConvocatoria} no existe." });
@@ -41,5 +41,15 @@ namespace MiProyecto8.controllers
         {
             return await _context.Participantes.ToListAsync();
         }
+        [HttpGet("buscar")]
+public IActionResult Buscar(
+    [FromQuery] string termino,
+    [FromHeader(Name = "X-Api-Key")] string apiKey
+)
+{
+    return Ok($"Buscando '{termino}' con la ApiKey '{apiKey}'");
+}
     }
+
+    
 }
