@@ -5,9 +5,9 @@ namespace MyApp.Namespace
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginRequest : ControllerBase
-    {
-        public string Correo { get; set; }
+    public class LoginRequest
+{
+    public string Correo { get; set; }
     public string Password { get; set; }
-    }
+}
 }
