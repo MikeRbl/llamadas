@@ -3,11 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MyApp.Namespace
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    // Simplemente una clase plana (POCO)
     public class LoginRequest
-{
-    public string Correo { get; set; }
-    public string Password { get; set; }
-}
+    {
+       public string? Username { get; set; }
+        public string? Password { get; set; }
+    }
 }
